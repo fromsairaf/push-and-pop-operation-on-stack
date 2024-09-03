@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="abc"
+      style="width: 250px; height: 50px; font-size: 20px; text-align: center"
+    />
+    <button onclick="push_e()">v</button>
+    <button onclick="pop_e()">pop</button>
+
+    <h2 id="demo"></h2>
+    <script>
+      //i will paste a value in input box
+      //on clicking the button that value will be stored in stack
+      //when i will click the opo button , the element from the top of the stack will be removed
+      //when i will click on the display, the stack will display to us
+
+      let valu;
+      let array = [23];
+      let index;
+      document.getElementById("demo").innerHTML = array + "<br>";
+      function push_e() {
+        valu = document.getElementById("abc").value;
+        index = array.length;
+        array[index] = valu;
+        document.getElementById("demo").innerHTML = array + "<br>";
+        console.log(array);
+      }
+      function pop_e() {
+        if (array.length > 0) {
+          array.length = array.length - 1;
+          document.getElementById("demo").innerHTML = array + "<br>";
+          console.log(array);
+        } else {
+          document.getElementById("demo").innerHTML =
+            "Your stack is already empty";
+        }
+      }
+    </script>
+  </body>
+</html>
